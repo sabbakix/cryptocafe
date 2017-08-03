@@ -8,7 +8,11 @@
       <ul>
         <li v-for="item in todo">{{ item }}</li>
       </ul>
-      
+
+      <p>insert your favorite color</p>
+      <input type="text" name="color" v-model="color">
+      <p>Your color is {{color}}</p>
+      <input type="button" v-on:click="capitalize" value="capitalize">
     </div>
     <script src="libs/vue.js"></script>
     <script>
@@ -21,7 +25,14 @@
             "xthis",
             "xthat",
             "xthat again"
-          ]
+          ],
+          color: ''
+        },
+        methods:{
+          capitalize: function(){
+            console.log(this.color);
+            this.color = this.color.toUpperCase();
+          }
         }
       });
     </script>
