@@ -1,12 +1,28 @@
 <html>
   <body>
     <div id="app">
-      <p>Hello, people</p>
+      <h1>{{message}}</h1>
+      <p v-if="show"> testing hidden message</p>
+      <p v-else>Default Message</p>
+
+      <ul>
+        <li v-for="item in todo">{{ item }}</li>
+      </ul>
+      
     </div>
-    <script src="https://unpkg.com/vue"></script>
+    <script src="libs/vue.js"></script>
     <script>
       let app = new Vue({
-        el: "#app"
+        el: "#app",
+        data:{
+          message: "Hello people",
+          show: false,
+          todo: [
+            "xthis",
+            "xthat",
+            "xthat again"
+          ]
+        }
       });
     </script>
   </body>
